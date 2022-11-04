@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+    testImplementation(
+            "com.codeborne:selenide:6.5.0",
+            "org.junit.jupiter:junit-jupiter:5.8.2",
+            'org.projectlombok:lombok:1.18.22'
+    )
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()//отвечает за запуск тестов
+}
